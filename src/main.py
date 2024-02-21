@@ -1,8 +1,10 @@
+#!shebang
 import sys
-sys.path.append('lib/data')
-sys.path.append('lib/interface')
-import Belief_Tensor
+sys.path.append("lib/")
+sys.path.append("test/")
 
-def main():
+def main ():
     pass
 
+if __name__ == "__main__":
+    main()
