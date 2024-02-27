@@ -16,12 +16,12 @@ class Calculator_Interface(object):
     def __init__(self):
         self.data = pd.read_csv(input("input the path to the data: "))
 
-    def run ():
+    def run (self):
         loop_status = RUNNING
         while loop_status == RUNNING:
-            loop_status = update()
+            loop_status = self.update()
 
-    def update():
+    def update(self):
         exit = 0
         if exit == 0:
             if True: #Placeholder condition
@@ -32,5 +32,5 @@ class Calculator_Interface(object):
             code = ERROR
         return code
 
-    def __del__():
+    def __del__(self):
         print ("Good bye")
