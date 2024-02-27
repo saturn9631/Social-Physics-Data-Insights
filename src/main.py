@@ -1,6 +1,16 @@
 #!shebang
 import sys
-sys.path.append('lib/data')
-sys.path.append('lib/interface')
 
-def main():
+import typing
+import sys
+sys.path.append("lib/")
+sys.path.append("test/")
+import Calculator
+import multiprocessing
+
+def main ():
+    pass
+
+
+if __name__ == "__main__":
+    main()
