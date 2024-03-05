@@ -12,3 +12,4 @@
 8. seaborn
 9. bokeh
 10. plotly
+11. jupyter
