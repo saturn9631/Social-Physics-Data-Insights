@@ -1,9 +1,9 @@
 import pandas as pd
 import numpy as np
-import scipy as sc
 import sympy as smp
 import networkx as nx
-import torch
+import seaborn
+import plotly
 
 def main ():
     pass

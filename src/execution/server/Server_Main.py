@@ -9,9 +9,9 @@ def main ():
     pass
 
 class PDR_Server:
-    def __init__ (self):
+    def __init__ (self, database):
         #Fill in logic to find data for the fields
-        #self.dataBase = sql
+        self.dataBase = database #Use dependency injection to allow the database to change, maybe wrap the database in a class that abstracts away the access syntax.
         #self.data = pd.DataFrame({})
         pass
     def update (self):
