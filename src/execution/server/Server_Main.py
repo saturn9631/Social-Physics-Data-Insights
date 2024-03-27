@@ -5,6 +5,10 @@ import sympy as smp
 import networkx as nx
 import torch
 
+import sys
+sys.path.append("lib/")
+sys.path.append("test/")
+
 def main ():
     pass
 
@@ -13,7 +17,6 @@ class PDR_Server:
         #Fill in logic to find data for the fields
         self.dataBase = database #Use dependency injection to allow the database to change, maybe wrap the database in a class that abstracts away the access syntax.
         #self.data = pd.DataFrame({})
-        pass
     def update (self):
         pass
     def __del__(self):

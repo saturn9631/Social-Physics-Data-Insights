@@ -5,6 +5,10 @@ import networkx as nx
 import seaborn
 import plotly
 
+import sys
+sys.path.append("lib/")
+sys.path.append("test/")
+
 def main ():
     pass
 
