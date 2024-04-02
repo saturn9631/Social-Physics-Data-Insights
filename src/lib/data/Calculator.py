@@ -1,4 +1,3 @@
-#!shebang
 import Actor_Tensor
 import numpy as np
 import pandas as pd
@@ -7,6 +6,7 @@ import scipy as scp
 import torch as tc
 import transformers as facehugger
 
+#It is unknown as to whether this file should be deleted or converted into a interface file.
 RUNNING = 0
 FINNISHED_SUCCESFULLY = 1
 ERROR = 2

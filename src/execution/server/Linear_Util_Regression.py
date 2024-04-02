@@ -8,4 +8,6 @@ import sys
 sys.path.append("lib/")
 sys.path.append("test/")
 
+import Actor_Tensor
+
 
