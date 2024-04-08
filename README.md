@@ -20,4 +20,4 @@ Most of the math used in this library will be calculus, linear algebra, statisti
 ### DataBase
 As of now the only database is MySql, however any sql relational database would probably work. At a certain point a vector database and a search engine might be useful.
 ## Commit Rules
-As of now there is not many since it is a small project, but code is welcome and so is math; it just needs to be in an issue or in a pull request to modify documentation.
+As of now there is not many since it is a small project, but code is welcome and so is math; the latter just needs to be in an issue or in a pull request to modify documentation.
