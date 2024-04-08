@@ -1,7 +1,8 @@
 # PoliDataRectifier
-
-This is a project to analyze politics using data and math borrowed from physics, economics and other places; all of which can be used to analyze everything from power structures to relationship markets, to the shifting of opinions.
-
+## Summary
+In modern times there is a firehose of information and politics is no different, so this project was made to parse down all the data into a usable format. In this is a project to analyze politics using data and math borrowed from physics, economics and other places; all of which can be used to analyze everything from power structures, to relationship markets, to the shifting of opinions of a population. 
+## Math
+Most of the math used in this library will be calculus, linear algebra, statistics, and game theory however more advanced math is planned: group theory, differential geometry, and functional analysis as well as some other miscellaneous stuff. One of the main goals of the library is to produce differential equations that predicts the decisions made by the entities (people, groups, organizations) based off of their payoffs, which will be called their strategy. The strategy and the associated DE can be shown along with the data to give insights as to what the entities are doing, why they are doining it, and what they will do in the future.
 ## Necessary Packages
 ### Python
 1. sympy
