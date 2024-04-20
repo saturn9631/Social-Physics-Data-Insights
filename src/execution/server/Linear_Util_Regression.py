@@ -16,14 +16,15 @@ import Actor_Tensor
 
 class Taylor_Model:
     """Encapsulates a best fit model based on Taylor's series."""
-    def __init__(self, terms: int):
-        self.taylor_coefficients_matrix = np.zeros(accuracy)
+    def __init__(self, terms : int, center = 0 : int):
+        self.coefficients = np.zeros(accuracy)
+        self.center = center
 
     def forward (self, input):
         result = 0
         index = 0
-        for coefficient in self.taylor_coefficients_matrix:
-            result = (coefficient / math.factorial(index)) * (input) ** index
+        for coefficient in self.coefficients:
+            result += (coefficient / math.factorial(index)) * (input - center) ** index
             index += 1
         return result
         """Pseudocode: f = taylor polynomial
@@ -35,18 +36,12 @@ class Taylor_Model:
     def regress(paramaters):
         pass
 
-    def convert_to_diff_eq():
+    def convert_to_diff_eq(order : int) -> smp.Eq:
         pass
         """
-        Algebra: f(x) = f(a) + (f'(a)/1!)(x - a) + (f"(a)/2!)(x - a)^2 + (f"'(a)/3!)(x - a)^3 + (f""(a)/4!)(x - a)^4 + ...
-        f(x) =~ f(a) + (f'(a)/1!)(x - a) + (f"(a)/2!)(x - a)^2
-        f'(x) =~ f'(a) + f"(a)(x - a)
-        f"(x) =~ f"(a)
-        f'(x) - f'(a) =~ f"(a)(x - a)
-        (f'(x) - f'(a))/f"(a) =~ x - a or (f'(x) - f'(a))/(x - a) =~ f"(a)
-        f(x) =~ f(a) + f'(a)((f'(x) - f'(a))/f"(a)) + f"(a)(f'(x) - f'(a))/2f"(a)
-        f(x) =~ f(a) + f'(a)((f'(x) - f'(a))/f"(a)) + (f'(x) - f'(a))/2
-        f(x) =~ f(a) + f'(a)f'(x)/f"(a) - (f'(a)^2)/f"(a)
-        Pseudocode: y(0)"""
+        Pseudocode:
+        result returned for order=2 should be: smp.Eq(f(x)*self.coefficients[2]*d^2*y/dx^2, g(x)*self.coefficients[1]*dy/dx + h(x)*self.coefficients[0]*y
+        order
+        """
 
 
