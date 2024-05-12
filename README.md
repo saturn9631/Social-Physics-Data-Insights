@@ -1,4 +1,4 @@
-# PoliDataRectifier
+# Social Physics Data Insights (formally PoliDataRectifier)
 ## Summary
 In modern times there is a firehose of information and politics is no different, so this project was made to parse down all the data into a usable format. In this is a project to analyze politics using data and math borrowed from physics, economics and other places; all of which can be used to analyze everything from power structures, to relationship markets, to the shifting of opinions of a population. The main behind this project is combining symbolic math with machine learning to allow better and faster solution to the problem as well as better understanding of how the solution was generated.
 ## Math
