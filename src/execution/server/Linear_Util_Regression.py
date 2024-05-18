@@ -13,20 +13,37 @@ sys.path.append("../../test/")
 
 import Actor_Tensor
 
+#Continuation Note: Create a loss function that is the sum of the data loss and the loss determined by how much the output deviates from taylor series. The outputs of the neural net should be the coefficients of the taylor polynomial.
 class Taylor_Model(nn.Module):
     """Encapsulates a best fit model based on Taylor's series."""
-    def __init__(self, terms, center):
+    def __init__(self, terms, center, data_points_window = 20):
         """Parameters: 
         terms (int): How many terms does the Taylor polynomial have.
         center (float): The value of the center of approximation."
+        data_points_window (int): The amount of points the neural network takes a a time.
         """
         self.coefficients = np.zeros(terms)
         self.center = center
+        hidden_layer_width = terms * 2
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(),
-            nn.ReLu()
+            nn.Linear(data_points_window, hidden_layer_width),
+            nn.ReLu(),
+            nn.Linear(hidden_layer_width,  hidden_layer_width),
+            nn.ReLu(),
+            nn.Linear(hidden_layer_width,  hidden_layer_width),
+            nn.ReLu(),
+            nn.Linear(hidden_layer_width,  hidden_layer_width),
+            nn.ReLu(),
+            nn.Linear(hidden_layer_width, terms)
         )
-#Finish building neural network
+    def forward(self, x):
+        x = self.flatten(x)
+        logits = self.linear_relu_stack(x)
+        return logits
+
+    def loss (self):
+        pass
+
     def evaluate (self, input):
         """Returns the value of the Taylor polynomial at the \"input\" variable.
         Parameters:
@@ -42,7 +59,7 @@ class Taylor_Model(nn.Module):
 
         #Forward is supposed to evaluate across an array and use cuda
     def getTaylorPolynomial (self, variable = smp.symbols("x")):
-        """Returns the Taylor polynomial as a sympy object. E.g.: getTaylorPolynomial (sympy.symbols("s")) -> a + b(s-q) + c(s-q) + ..., where a, b, c are the Taylor coefficients, and q is the center.
+        """Returns the Taylor polynomial as a sympy object. E.g.: getTaylorPolynomial (sympy.symbols("s")) -> a + b(s-q) + c(s-q)**2 + ..., where a, b, c, ... are the Taylor coefficients, and q is the center.
         Parameters:
         variable (sympy Symbol): the input variable for the Taylor polynomial. 
         Return:
