@@ -1,7 +1,11 @@
 ## Features List
+1. Mining, Cleaning and Formatting Data
+2. Tools for creating game theory models of social interaction and visuallizing and doing math on their state space.
+3. Tools to map institutions as graphs (networks) and visualize those graphs
+4. Tools to map the individual and collective psychology and predict how it affects decisions.
+
+### Implementing Code
 1. Taylor Series Linear Regression/Neural Network
-2. Game Theory phase space, and visualizer for it.
-3. Institution Mapper
 
 ## References
 ### Math
