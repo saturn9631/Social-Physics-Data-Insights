@@ -1,14 +1,7 @@
 #!shebang
-import sys
-
-import typing
-import sys
-sys.path.append("lib/")
-sys.path.append("test/")
-import Calculator
-import multiprocessing
-
-def main ():
+import lib.data
+from faker import Faker
+def main():
     pass
 
 
