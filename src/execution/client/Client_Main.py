@@ -8,7 +8,7 @@ import torch
 def main ():
     pass
 
-class PDR_Client:
+class SPDI_Client:
     def __init__(self):
         pass
     def run (self):

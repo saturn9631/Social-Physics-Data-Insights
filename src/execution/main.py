@@ -10,7 +10,8 @@ sys.path.append("../lib/")
 sys.path.append("../test/")
 
 def main ():
-    data = unit_test()
+    people_amount = int(input())
+    data = unit_test(people_amount)
 
 def unit_test(people_number = 10):
     data = {};

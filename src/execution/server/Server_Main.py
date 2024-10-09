@@ -8,7 +8,7 @@ import torch
 def main ():
     pass
 
-class PDR_Server:
+class SPDI_Server:
     def __init__ (self):
         #Fill in logic to find data for the fields
         #self.dataBase = sql
