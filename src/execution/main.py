@@ -3,7 +3,6 @@
 import typing
 #import multiprocessing
 from faker import Faker
-import lib.data
 import pandas as pd
 import random
 import sys
@@ -11,10 +10,10 @@ sys.path.append("../lib/")
 sys.path.append("../test/")
 
 def main ():
-    people_amount = int(input())
-    data = unit_test(people_amount)
+    unit_test()
 
-def unit_test(people_number = 10):
+def unit_test():
+    people_number = int(input("How many people do you want?: "))
     data = {};
     faking = Faker()
     genders = []
@@ -38,7 +37,14 @@ def unit_test(people_number = 10):
     data.update({ "name" : names, "gender" : genders, "Address" : addresses })
     data = pd.DataFrame(data)
     print(f"Here is the resulting data\n{data}")
-    return data
+    #ideaology_classifier = Classifier(pd.DataFrame({
+        #"Gender": {"Male": 20, "Female": -20, "Non-Binary": 45},
+    #}))
+    data_num = data.replace("Male", 20)
+    data_num = data_num.replace("Female", -20)
+    data_num = data_num.replace("Non-Binary", -50)
+    data_num = data_num.replace("Unknown", 0)
+    print(f"The scores of the people are\n{data_num}")
 
 if __name__ == "__main__":
     main()
