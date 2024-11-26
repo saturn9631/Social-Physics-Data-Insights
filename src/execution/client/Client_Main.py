@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+import matplotlib as mtplt
 import pandas as pd
 import numpy as np
 import sympy as smp
@@ -12,11 +14,11 @@ sys.path.append("test/")
 def main ():
     pass
 
-class PDR_Client:
+class SPDI_Client:
     def __init__(self):
         pass
     def run (self):
-        pass
+        plt.show()
     def __del__(self):
         pass
 
