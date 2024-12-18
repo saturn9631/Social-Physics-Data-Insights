@@ -1,1 +1,0 @@
-mysql+pymysql://LocalApplicationAccess:L*-G5kBZ9i@localhost/SPDI_Data
