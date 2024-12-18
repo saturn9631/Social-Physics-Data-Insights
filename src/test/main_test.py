@@ -2,9 +2,37 @@ import pandas as pd
 import random
 from faker import Faker
 
+import sys
+#sys.path.append("../lib/game")
+#sys.path.append("../lib/institution")
+#sys.path.append("../lib/psychology")
+#sys.path.append("../lib/data")
+import election
+import data_filters
 
-def unit_test():
-    people_number = int(input("How many people do you want?: "))
+
+
+def election_test():
+    candidate_number = int(input("How many candidates are running?: "))
+    candidates = make_people(candidate_number)
+    candidates = data_filters.remove_unknown_people(candidates)
+    popularity = []
+    print(f"The type of candidates is {type(candidates)}\n")
+    for candidate in candidates.iterrows():
+        popularity.append(random.randrange(0,11))
+    candidates["Popularity"] = popularity
+
+    influencer_number = int(input("How many influencers are interested in the election?: "))
+    influencers = make_people(influencer_number)
+    influeuncers = data_filters.remove_unknown_people(influencers)
+    popularity = []
+    for influencer in influencers.iterrows():
+        popularity.append(random.randrange(0,11))
+    influencers["Popularity"] = popularity
+
+    print(f"Here are the candidates:\n{candidates}\n Here are the influencers:\n{influencers}\n")
+
+def make_people(people_number):
     data = {};
     faking = Faker()
     genders = []
@@ -31,8 +59,4 @@ def unit_test():
     #ideaology_classifier = Classifier(pd.DataFrame({
         #"Gender": {"Male": 20, "Female": -20, "Non-Binary": 45},
     #}))
-    data_num = data.replace("Male", 20)
-    data_num = data_num.replace("Female", -20)
-    data_num = data_num.replace("Non-Binary", -50)
-    data_num = data_num.replace("Unknown", 0)
-    print(f"The scores of the people are\n{data_num}")
+    return data
